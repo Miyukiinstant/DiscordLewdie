@@ -1,7 +1,6 @@
 'use strict';
 const  axios = require("axios");
 const { MessageEmbed } = require("discord.js");
-const { default: random } = require("random");
 module.exports = async (client)=>{
     const api = 'https://gelbooru.com/index.php?page=dapi&s=post&q=index&api_key=28ca13e2663daf40b08d2722e2ab8830a460f00ef07c76ee87b9c2f6f0fa3ccb&user_id=938617';
     client.on('interactionCreate',interaction=>{        
@@ -10,7 +9,7 @@ module.exports = async (client)=>{
             axios.get(api,{
                 params:{
                     json: 1,
-                    tags: 'yuri hug rating:safe',
+                    tags: 'yuri hug 2girls rating:safe',
                 }
             }).then(response=>{
                 const image = response.data.post[Math.floor(Math.random()*response.data.post.length)];
