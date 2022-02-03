@@ -5,6 +5,7 @@ const { readdirSync } = require('fs');
 const client = new Client({intents: Intents.FLAGS.GUILDS});
 const path = './commands/';
 client.on('ready',()=>{
+    console.log(client.user.tag);
     client.user.presence.set({
         status: 'online',
         activities: [{

@@ -19,8 +19,6 @@ module.exports = async (client)=>{
                 }
             }).then(response=>{
                 const image = response.data.post[Math.floor(Math.random()*response.data.post.length)];
-                //console.log(interaction.options.data);
-                //console.log(image);
                 const embed = new MessageEmbed({
                     title: image.owner,
                     url: image.source,
