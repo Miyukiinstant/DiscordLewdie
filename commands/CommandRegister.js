@@ -14,11 +14,11 @@ module.exports = (client)=>{
     },
     {
         name: 'gelbooru',
-        description: 'Some yeeyee',
+        description: 'Anime/Hentai gallery',
         options: [{
             type: 'STRING',
-            name: 'query',
-            description: 'Some good stuff',
+            name: 'tags',
+            description: 'Separated by space',
             required: true,
         }],
         autocomplete: true,
@@ -37,5 +37,16 @@ module.exports = (client)=>{
     {
         name: 'ping',
         description: 'Pong',
+    },
+    {
+        name: 'info',
+        description: 'About someone',
+        options: [{
+            type: 'USER',
+            name: 'user',
+            description: 'Guild user',
+            required: true,
+        }],
+        autocomplete: true,
     }]);
 }
