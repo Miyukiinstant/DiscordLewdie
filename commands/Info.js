@@ -19,7 +19,7 @@ module.exports=(client)=>{
                     fields: [
                         {
                             name:'Creation date',
-                            value: `${user.createdAt.toLocaleDateString('it-IT')}`,
+                            value: `${user.createdAt.toLocaleDateString()}`,
                         }
                     ],
                     footer: {

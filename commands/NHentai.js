@@ -9,6 +9,10 @@ module.exports = async (client)=>{
             nhApi.getBook(interaction.options.data[0].value).then(async result=>{
                 const book = result;
                 const embed = new MessageEmbed({
+                    author:{
+                        name:'NHentai',
+                        icon_url: 'https://i.imgur.com/D6eAme8.png',
+                    },
                     title: book.title.pretty,
                     url: `https://nhentai.net/g/${book.id}`,
                     
@@ -24,7 +28,7 @@ module.exports = async (client)=>{
                         },
                         {
                             name:'Uploaded',
-                            value: `${book.uploaded}`,
+                            value: `${book.uploaded.toLocaleDateString()}`,
                             inline: true,
                         },
                         {
@@ -32,9 +36,13 @@ module.exports = async (client)=>{
                             value: `${book.pages.length}`,
                             inline: true,
                         }
-                    ]
+                    ],
+                    footer:{
+                        text: book.tags.join(', '),
+                        iconURL : 'https://i.imgur.com/D6eAme8.png'
+                    } 
                 });
-                interaction.reply({embeds: [embed], ephemeral: false })
+                interaction.reply({embeds: [embed], ephemeral: false });
             }).catch(error=>{
                 console.log(error);
             });

@@ -48,5 +48,10 @@ module.exports = (client)=>{
             required: true,
         }],
         autocomplete: true,
+    },
+    {
+        name: 'restart',
+        description: 'Restart bot',
+        autocomplete: true,
     }]);
 }
