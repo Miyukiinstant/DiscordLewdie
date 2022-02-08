@@ -6,11 +6,11 @@ const client = new Client({intents: Intents.FLAGS.GUILDS});
 const path = './commands/';
 client.on('ready',()=>{
     console.log(client.user.tag);
-    client.user.presence.set({
-        status: 'online',
-        activities: [{
-            name:'water boil',
+    client.user.setPresence({
+        activities:[{
+            name: 'water boil',
             type: 'WATCHING',
+            url: 'https://imgur.com/',
         }]
     })
     for (const iterator of readdirSync(path,'utf-8')) {
