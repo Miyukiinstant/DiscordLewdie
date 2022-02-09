@@ -5,7 +5,7 @@ module.exports=(client)=>{
         if(!interaction.isCommand())return;
         if(interaction.commandName==='info'){
             
-            const user = interaction.options._hoistedOptions[0].user.fetch(true).then(user=>{
+            interaction.options._hoistedOptions[0].user.fetch(true).then(user=>{
                 const embed = new MessageEmbed({
                     title: 'Info',
                     color: `${user.hexAccentColor}`,
