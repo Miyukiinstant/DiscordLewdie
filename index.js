@@ -31,4 +31,4 @@ client.on('ready',()=>{
     });
 });
 
-client.login();
+client.login('ODU2NTQ1MTQ4MDk5MjMxNzc4.YNCl1Q.ZeHt2nTJ7XnUy-VmcGfYvYsZJ84');
