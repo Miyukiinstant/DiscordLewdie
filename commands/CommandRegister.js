@@ -98,6 +98,7 @@ module.exports = (client)=>{
                 required: true,
             }],
             autocomplete: true,
+            defaultPermission: false,
         },
         ]);
 }

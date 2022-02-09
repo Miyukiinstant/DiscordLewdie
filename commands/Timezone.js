@@ -8,11 +8,12 @@ module.exports=async (client)=>{
         if(!interaction.isCommand()) return;
         if(interaction.commandName === 'timezone'){
             //console.log(interaction.options._hoistedOptions[0].value)
-            await axios.get(`https://worldtimeapi.org/api/timezone/${interaction.options._hoistedOptions[0].value}`)
+            axios.get(`https://worldtimeapi.org/api/timezone/${interaction.options._hoistedOptions[0].value}`)
             .then(result =>{
-                console.log(result.datetime);
+                console.log(result);
+                interaction.reply({ embeds: [embed], ephemeral: true });
             })
-            interaction.reply({ embeds: [embed], ephemeral: true });
+            
         }
     })
 }
