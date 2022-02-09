@@ -2,13 +2,35 @@ module.exports = (client)=>{
     client.application.commands.set([]);
     const guild = client.guilds.cache.first();
     guild.commands.set([{
-        name: 'hug',
-        description: 'Hug someone',
+        name: 'social',
+        description: 'touchies',
         options: [{
-            type: 'USER',
-            name: 'user',
+            type: 'STRING',
+            name: 'action',
+            choices: [{
+                name: 'hug',
+                value: 'hug'
+            },
+            {
+                name: 'kiss',
+                value: 'kiss'
+            },
+            {
+                name: 'cuddle',
+                value: 'cuddle'
+            },
+            {
+                name: 'lick',
+                value: 'lick'
+            }],
             description: 'Guild user',
             required: true,
+        },
+        {
+            type: 'USER',
+            name: 'user',
+            description: 'pick a user',
+            required: true
         }],
         autocomplete: true,
     },
