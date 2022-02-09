@@ -16,7 +16,10 @@ module.exports = async (client)=>{
             }).then(response=>{
                 const image = response.data.post[Math.floor(Math.random()*response.data.post.length)];
                 const embed = new MessageEmbed({
-                    description: `<@${interaction.user.id}> ${action}s <@${user}>`,
+                    author:{
+                        iconURL: 'https://gelbooru.com/favicon.png'
+                    },
+                    description: `<@${interaction.user.id}> sent <@${user}> a ${action}`,
                     image: {
                         url: image.sample_url === ''?image.file_url:image.sample_url,    
                     },

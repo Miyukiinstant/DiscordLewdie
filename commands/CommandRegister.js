@@ -20,8 +20,8 @@ module.exports = (client)=>{
                 value: 'lick'
             },
             {
-                name: 'fuck',
-                value: 'fuck'
+                name: 'feet',
+                value: 'feet'
             }],
             description: 'Guild user',
             required: true,
