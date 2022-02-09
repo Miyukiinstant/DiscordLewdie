@@ -16,7 +16,7 @@ module.exports = async (client)=>{
             }).then(response=>{
                 const image = response.data.post[Math.floor(Math.random()*response.data.post.length)];
                 const embed = new MessageEmbed({
-                    description: `<@${interaction.user.id}> ${action} for <@${user}>`,
+                    description: `<@${interaction.user.id}> ${action}s <@${user}>`,
                     image: {
                         url: image.sample_url === ''?image.file_url:image.sample_url,    
                     },

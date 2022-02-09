@@ -16,12 +16,12 @@ module.exports = (client)=>{
                 value: 'kiss'
             },
             {
-                name: 'cuddle',
-                value: 'cuddle'
-            },
-            {
                 name: 'lick',
                 value: 'lick'
+            },
+            {
+                name: 'fuck',
+                value: 'fuck'
             }],
             description: 'Guild user',
             required: true,
