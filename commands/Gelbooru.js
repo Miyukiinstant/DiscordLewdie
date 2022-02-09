@@ -26,7 +26,7 @@ module.exports = async (client)=>{
                         text: image.tags,
                     },
                     image: {
-                        url: image.sample_url === ''?image.file_url:image.sample_url,    
+                        url: image.file_url
                     },
                     color: [122,0,122],
                     fields: [
@@ -37,7 +37,13 @@ module.exports = async (client)=>{
                         }
                     ]
                 });
-                interaction.reply({embeds: [embed], ephemeral: false })
+                interaction.reply({embeds: [embed], ephemeral: false }).catch(error=>{
+                    interaction.reply({embeds: [new MessageEmbed({
+                        description:"Sorry but I couldn't find anything",
+                        color: 'RED',
+                    })], ephemeral: true })
+                })
+
             })
             .catch(error=>{ 
                 interaction.reply({embeds: [new MessageEmbed({
