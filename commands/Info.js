@@ -1,5 +1,4 @@
 const { MessageEmbed, User, UserManager } = require("discord.js");
-
 module.exports=(client)=>{
     client.on('interactionCreate',async interaction=>{
         if(!interaction.isCommand())return;

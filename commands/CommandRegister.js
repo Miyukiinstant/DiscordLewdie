@@ -1,17 +1,8 @@
 const { default: axios } = require("axios");
-const json = require('./json/tm.json');
 
 module.exports = (client)=>{
     client.application.commands.set([]);
     const guild = client.guilds.cache.first();
-    var tmChoices = [];
-    for (let index = 0; index < 25; index++) {
-        if(json[index]=== undefined) return;
-        tmChoices.push({
-            name:json[index],
-            value: json[index]
-        })        
-    }
     guild.commands.set([{
         name: 'social',
         description: 'touchies',
@@ -98,5 +89,17 @@ module.exports = (client)=>{
             }],
             autocomplete: true,
         },
+        {
+            name:'images',
+            description:'Retrieve images from a channel',
+            options:[
+                {
+                    name:'channelid',
+                    type:'STRING',
+                    description:'channelID',
+                    required:true
+                }
+            ]
+        }
         ]);
 }
