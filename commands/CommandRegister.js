@@ -88,19 +88,6 @@ module.exports = (client)=>{
             autocomplete: true,
         },
         {
-            name: 'timezone',
-            description: 'Timezones',
-            options: [{
-                type: 'STRING',
-                name: 'timezones',
-                description: 'List of timezones',
-                choices: tmChoices,
-                required: true,
-            }],
-            autocomplete: true,
-            defaultPermission: false,
-        },
-        {
             name: 'steam',
             description: 'Retrieve steam profile',
             options: [{
