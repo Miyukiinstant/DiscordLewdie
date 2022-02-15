@@ -49,4 +49,15 @@ module.exports = async (client)=>{
                 
         }
     })
+    return{
+        name: 'nhentai',
+        description: 'Search some doujin',
+        options: [{
+            type: 'INTEGER',
+            name: 'search-numbers',
+            description: '6-digit',
+            required: true,
+        }],
+        autocomplete: true,
+    }
 }

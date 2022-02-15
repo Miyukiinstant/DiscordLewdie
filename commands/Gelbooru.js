@@ -53,4 +53,15 @@ module.exports = async (client)=>{
             });
         }
     })
+    return{
+        name: 'gelbooru',
+        description: 'Anime/Hentai gallery',
+        options: [{
+            type: 'STRING',
+            name: 'tags',
+            description: 'Separated by space',
+            required: true,
+        }],
+        autocomplete: true,
+    }
 }

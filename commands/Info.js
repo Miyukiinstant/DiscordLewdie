@@ -30,4 +30,15 @@ module.exports=(client)=>{
             
         }
     });
+    return {
+        name: 'info',
+            description: 'About someone',
+            options: [{
+                type: 'USER',
+                name: 'user',
+                description: 'Guild user',
+                required: true,
+            }],
+            autocomplete: true,
+    }
 }

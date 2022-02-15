@@ -10,6 +10,7 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS,
 const path = './commands/';
 client.on('ready',()=>{
     console.log(client.user.tag);
+    const commands = []
     client.user.setPresence({
         activities:[{
             name: 'water boil',
@@ -18,8 +19,11 @@ client.on('ready',()=>{
         }]
     })
     for (const iterator of readdirSync(path,'utf-8')) {
-        if(iterator.includes('.js')) require(`${path}/${iterator}`)(client);
+        if(iterator.includes('.js')) commands.push(require(`${path}/${iterator}`)(client));
     }
+    client.application.commands.set([]);
+    const guild = client.guilds.cache.first();
+    guild.commands.set(commands)
     client.on('interactionCreate',async interaction=>{
         if(!interaction.isCommand()) return;
         if(interaction.commandName === 'restart') {

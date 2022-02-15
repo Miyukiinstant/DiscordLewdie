@@ -31,4 +31,37 @@ module.exports = async (client)=>{
             });
         }
     })
+    return{
+        name: 'social',
+        description: 'touchies',
+        options: [{
+            type: 'STRING',
+            name: 'action',
+            choices: [{
+                name: 'hug',
+                value: 'hug'
+            },
+            {
+                name: 'kiss',
+                value: 'kiss'
+            },
+            {
+                name: 'lick',
+                value: 'lick'
+            },
+            {
+                name: 'feet',
+                value: 'feet'
+            }],
+            description: 'pick an action',
+            required: true,
+        },
+        {
+            type: 'USER',
+            name: 'user',
+            description: 'pick a user',
+            required: true
+        }],
+        autocomplete: true,
+        }
 }
