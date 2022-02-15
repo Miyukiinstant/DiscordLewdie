@@ -55,4 +55,15 @@ module.exports=async (client)=>{
             
         }
     })
+    return{
+        name: 'steam',
+        description: 'Retrieve steam profile',
+        options: [{
+            type: 'STRING',
+            name: 'steamid64',
+            description: 'Your steam id 64',
+            required: true,
+        }],
+        autocomplete: true,
+    }
 }

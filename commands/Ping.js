@@ -10,4 +10,8 @@ module.exports = async (client)=>{
             interaction.reply({ embeds: [embed], ephemeral: true });
         }
     })
+    return{
+        name: 'ping',
+        description: 'Pong',
+    }
 }
