@@ -6,7 +6,7 @@ module.exports= async client=>{
         if(interaction.commandName === 'weewee'){
             const user = await interaction.user.fetch(true);
             interaction.reply({ embeds: [new MessageEmbed({
-                description: `<@${interaction.options._hoistedOptions[0].value}>'s weewee is ${Math.floor(Math.random()*20)}cm long :purple_heart:`,
+                description: `<@${interaction.options._hoistedOptions[0].value}>'s weewee is ${Math.floor(Math.random()*30)}cm long :purple_heart:`,
                 color: user.hexAccentColor
             })], ephemeral: false });
         }
