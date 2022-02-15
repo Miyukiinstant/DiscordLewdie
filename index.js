@@ -25,5 +25,4 @@ client.on('ready',()=>{
     const guild = client.guilds.cache.first();
     guild.commands.set(commands)
 });
-
 client.login();
