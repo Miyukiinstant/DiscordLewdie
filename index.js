@@ -10,7 +10,6 @@ const client = new Client({intents: [Intents.FLAGS.GUILDS,
 const path = './commands/';
 client.on('ready',()=>{
     console.log(client.user.tag);
-    const commands = []
     client.user.setPresence({
         activities:[{
             name: 'water boil',
@@ -18,15 +17,15 @@ client.on('ready',()=>{
             url: 'https://imgur.com/',
         }]
     })
+    const guild = client.guilds.cache.first();
+    client.application.commands.set([]);
     for (const iterator of readdirSync(path,'utf-8')) {
         if(iterator.includes('.js')) {
-            (require(`${path}/${iterator}`)(client)).then(res=>{
-                commands.push(res)
+            (require(`${path}/${iterator}`)(client))
+            .then(command=>{
+                guild.commands.create(command)
             })
         }
     }
-    client.application.commands.set([]);
-    const guild = client.guilds.cache.first();
-    guild.commands.set(commands)
 });
 client.login();
