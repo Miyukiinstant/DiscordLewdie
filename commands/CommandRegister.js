@@ -99,7 +99,9 @@ module.exports = (client)=>{
                     description:'channelID',
                     required:true
                 }
-            ]
+            ],
+            defaultPermission: false
+
         }
         ]);
 }

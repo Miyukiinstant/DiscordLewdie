@@ -25,6 +25,7 @@ module.exports=async client=>{
                     interaction.reply({content:'File sent!', ephemeral:true})
                 }
             })   
+            
         }
     })
 }
