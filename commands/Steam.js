@@ -1,6 +1,6 @@
 const { default: axios } = require("axios");
 const { MessageEmbed } = require("discord.js")
-module.exports=async (client)=>{    
+module.exports=async client=>{    
     client.on('interactionCreate',interaction=>{
         if(!interaction.isCommand()) return;
         if(interaction.commandName === 'steam'){

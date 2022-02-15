@@ -1,7 +1,7 @@
 'use strict';
 const  axios = require("axios");
 const { MessageEmbed } = require("discord.js");
-module.exports = async (client)=>{
+module.exports = async client=>{
     const api = 'https://gelbooru.com/index.php?page=dapi&s=post&q=index&api_key=28ca13e2663daf40b08d2722e2ab8830a460f00ef07c76ee87b9c2f6f0fa3ccb&user_id=938617';
     client.on('interactionCreate',interaction=>{        
         if(!interaction.isCommand()) return;
@@ -63,5 +63,5 @@ module.exports = async (client)=>{
             required: true
         }],
         autocomplete: true,
-        }
+    }
 }

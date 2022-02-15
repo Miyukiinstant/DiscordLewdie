@@ -2,7 +2,7 @@
 const { MessageEmbed } = require("discord.js");
 const { API } = require("nhentai-api");
 const nhApi = new API();
-module.exports = async (client)=>{
+module.exports = async client=>{
     client.on('interactionCreate',interaction=>{        
         if(!interaction.isCommand()) return;
         if(interaction.commandName === 'nhentai'){

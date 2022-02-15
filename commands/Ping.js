@@ -1,6 +1,6 @@
 'use strict';
 const { MessageEmbed } = require("discord.js");
-module.exports = async (client)=>{
+module.exports = async client=>{
     const embed = new MessageEmbed({
         description: 'Pong',
     })    

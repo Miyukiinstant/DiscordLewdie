@@ -19,7 +19,11 @@ client.on('ready',()=>{
         }]
     })
     for (const iterator of readdirSync(path,'utf-8')) {
-        if(iterator.includes('.js')) commands.push(require(`${path}/${iterator}`)(client));
+        if(iterator.includes('.js')) {
+            (require(`${path}/${iterator}`)(client)).then(res=>{
+                commands.push(res)
+            })
+        }
     }
     client.application.commands.set([]);
     const guild = client.guilds.cache.first();
