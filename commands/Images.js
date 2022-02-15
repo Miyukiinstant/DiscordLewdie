@@ -8,23 +8,23 @@ module.exports=async client=>{
                 urls:[]
             }
             const channelID = interaction.options._hoistedOptions[0].value;
-            const channels = interaction.guild.channels.cache
+            const channels = interaction.guild.channels.cache;
+            const filename = `tmp/${Date.now()}.json`;
             channels.map(async (index)=>{
-                if (`${index.id}` === `${channelID}`) { //935251511234138112
+                if (`${index.id}` === `${channelID}`) {
                     const res = await index.messages.fetch();
                     res.map((index)=>{
                         index.attachments.map(async (value)=>{
-                            json_images.urls.push(JSON.stringify(value.attachment))
+                            json_images.urls.push(value.attachment)
                         })                        
                     })          
-                    var filename = `${Date.now()}.json`;
                     fs.writeFileSync(filename,JSON.stringify(json_images,null,'\t'),'utf-8')
                     interaction.channel.send({
                         files:[filename]
                     })
-                    fs.unlinkSync(filename);
+                    interaction.reply({content:'File sent!', ephemeral:true})
                 }
-            })                        
+            })   
         }
     })
 }
