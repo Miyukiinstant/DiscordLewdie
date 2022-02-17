@@ -3,6 +3,7 @@
     "axios": "^0.25.0",
     "discord.js": "^13.6.0",
     "dotenv": "^15.0.0",
-    "nhentai-api": "^3.4.3"
+    "nhentai-api": "^3.4.3",
+    "pet-pet-gif": "^1.0.9"
   }
 }
