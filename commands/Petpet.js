@@ -5,9 +5,10 @@ module.exports = async client=>{
     client.on('interactionCreate',async interaction=>{
         if(!interaction.isCommand()) return;
         if(interaction.commandName === 'petpet'){
-            const embed = new MessageEmbed();
             const user = interaction.options._hoistedOptions[0].member;
-            const animatedGif = await petPetGif(user.displayAvatarURL({dynamic:true,format:'png'}))
+            const animatedGif = await petPetGif(user.displayAvatarURL({dynamic:true,format:'png'}),{
+                resolution: 256
+            })
             interaction.reply({ embeds: [new MessageEmbed({
             })],files:[
                 {
