@@ -18,7 +18,7 @@ module.exports = async client=>{
                 attachment:animatedGif,
                 name:'petPetGif.gif'
             }
-        ], ephemeral: true });
+        ], ephemeral: false });
         }
     })
     return{
