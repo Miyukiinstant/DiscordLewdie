@@ -5,8 +5,7 @@ module.exports = async client=>{
     client.on('interactionCreate',async interaction=>{
         if(!interaction.isCommand()) return;
         if(interaction.commandName === 'inspiro'){
-            const user = interaction.options._hoistedOptions[0].member
-            const g_user = await user.user.fetch(true)
+            const g_user = await interaction.user.fetch(true)
             const inspiro = await axios.get('https://inspirobot.me/api?generate=true')
             interaction.reply({ embeds: [new MessageEmbed({
                 color: `${g_user.hexAccentColor}`,
