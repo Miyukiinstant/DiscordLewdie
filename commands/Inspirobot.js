@@ -20,6 +20,6 @@ module.exports = async client=>{
     })
     return{
         name: 'inspiro',
-        description: 'Some inspirational quote',
+        description: 'Some randomly generated inspirational quote',
     }
 }
