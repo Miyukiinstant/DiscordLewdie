@@ -1,17 +1,8 @@
 'use strict';
 const { MessageEmbed } = require("discord.js");
-module.exports = async client=>{
+module.exports = async interaction=>{
     const embed = new MessageEmbed({
-        description: 'Pong',
+        description: 'Pong!',
     })    
-    client.on('interactionCreate',interaction=>{
-        if(!interaction.isCommand()) return;
-        if(interaction.commandName === 'ping'){
-            interaction.reply({ embeds: [embed], ephemeral: true });
-        }
-    })
-    return{
-        name: 'ping',
-        description: 'Pong',
-    }
+    interaction.reply({ embeds: [embed], ephemeral: true });
 }

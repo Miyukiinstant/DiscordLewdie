@@ -17,15 +17,16 @@ client.on('ready',()=>{
             url: 'https://imgur.com/',
         }]
     })
-    const guild = client.guilds.cache.first();
-    client.application.commands.set([]);
-    for (const iterator of readdirSync(path,'utf-8')) {
+    require('./CommandEntry')(client)
+    //const guild = client.guilds.cache.first();
+    //client.application.commands.set([]);
+    /*for (const iterator of readdirSync(path,'utf-8')) {
         if(iterator.includes('.js')) {
             (require(`${path}/${iterator}`)(client))
             .then(command=>{
-                guild.commands.create(command)
+                //guild.commands.create(command)
             })
         }
-    }
+    }*/
 });
 client.login();
