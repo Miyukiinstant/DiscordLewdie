@@ -20,7 +20,7 @@ module.exports = async client =>{
                 requireCommand(path,'Inspirobot',interaction)
             break;
             case 'reload':
-                requireCommand(path,'admin/InitCommands',interaction)
+                require('./commands/admin/InitCommands')(interaction,client)
             break;
         }
     })
