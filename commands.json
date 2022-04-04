@@ -94,5 +94,9 @@
     {
         "name": "inspiro",
         "description": "Some randomly generated inspirational quote"
+    },
+    {
+        "name": "reload",
+        "description": "Reload bot commands"
     }
 ]

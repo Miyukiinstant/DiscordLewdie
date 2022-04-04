@@ -1,3 +1,4 @@
+'use strict'
 module.exports = async client =>{
     const path = './commands/';
     function requireCommand(path,name,type,type2){
@@ -17,6 +18,9 @@ module.exports = async client =>{
             break;
             case 'inspiro':
                 requireCommand(path,'Inspirobot',interaction)
+            break;
+            case 'reload':
+                requireCommand(path,'admin/InitCommands',interaction)
             break;
         }
     })
