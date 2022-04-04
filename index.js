@@ -19,7 +19,6 @@ client.on('ready',()=>{
     })
     require('./CommandEntry')(client)
     //const guild = client.guilds.cache.first();
-    //client.application.commands.set([]);
     /*for (const iterator of readdirSync(path,'utf-8')) {
         if(iterator.includes('.js')) {
             (require(`${path}/${iterator}`)(client))

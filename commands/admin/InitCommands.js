@@ -8,7 +8,7 @@ module.exports = (interaction,client) =>{
 
     const guild = client.guilds.cache.first();
     commands = require('../../commands.json')
-    client.application.commands.set(commands);
+    guild.commands.set(commands);
     
     interaction.editReply({ embeds: [new MessageEmbed({
         description:"Realoded commands!"

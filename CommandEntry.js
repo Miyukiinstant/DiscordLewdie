@@ -1,7 +1,7 @@
 'use strict'
 module.exports = async client =>{
     const path = './commands/';
-    function requireCommand(path,name,type,type2){
+    function requireCommand(path,name,type){
         require(`${path}/${name}`)(type)
     }
     client.on('interactionCreate',interaction=>{
@@ -16,7 +16,7 @@ module.exports = async client =>{
             case 'steam':
                 requireCommand(path,'Steam',interaction)
             break;
-            case 'inspiro':
+            case 'linspiro':
                 requireCommand(path,'Inspirobot',interaction)
             break;
             case 'reload':
