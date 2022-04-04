@@ -16,7 +16,7 @@ module.exports = async client =>{
             case 'steam':
                 requireCommand(path,'Steam',interaction)
             break;
-            case 'linspiro':
+            case 'inspiro':
                 requireCommand(path,'Inspirobot',interaction)
             break;
             case 'reload':
