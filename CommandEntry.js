@@ -10,26 +10,34 @@ module.exports = async client =>{
             case 'ping':
                 requireCommand(path,'Ping',interaction)
                 break;
-            case 'info':
+    
+                case 'info':
                 requireCommand(path,'Info',interaction)
                 break;
-            case 'steam':
+    
+                case 'steam':
                 requireCommand(path,'Steam',interaction)
             break;
+    
             case 'inspiro':
                 requireCommand(path,'Inspirobot',interaction)
             break;
-            case 'reload':
-                require('./commands/admin/InitCommands')(interaction,client)
-            break;
+    
             case 'petpet':
                 requireCommand(path,'Petpet',interaction)
             break;
+    
             case 'social':
                 requireCommand(path,'Social',interaction)
             break;
+    
             case 'nhentai':
                 requireCommand(path,'NHentai',interaction)
+    
+            break;
+            
+            case 'reload':
+                require('./commands/admin/InitCommands')(interaction,client)
             break;
         }
     })
