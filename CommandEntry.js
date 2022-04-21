@@ -22,6 +22,15 @@ module.exports = async client =>{
             case 'reload':
                 require('./commands/admin/InitCommands')(interaction,client)
             break;
+            case 'petpet':
+                requireCommand(path,'Petpet',interaction)
+            break;
+            case 'social':
+                requireCommand(path,'Social',interaction)
+            break;
+            case 'nhentai':
+                requireCommand(path,'NHentai',interaction)
+            break;
         }
     })
 }

@@ -18,14 +18,5 @@ client.on('ready',()=>{
         }]
     })
     require('./CommandEntry')(client)
-    //const guild = client.guilds.cache.first();
-    /*for (const iterator of readdirSync(path,'utf-8')) {
-        if(iterator.includes('.js')) {
-            (require(`${path}/${iterator}`)(client))
-            .then(command=>{
-                //guild.commands.create(command)
-            })
-        }
-    }*/
 });
 client.login();
